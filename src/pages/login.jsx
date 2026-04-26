@@ -1,15 +1,14 @@
 import { useState } from "react";
-import "./Login.css";
+import "./login.css";
 
-export default function Login() {
+export default function Login({onLogin}) {
   const [nip, setNip] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
+    const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Login dengan NIP:", nip);
-    // TODO: tambahkan logika autentikasi di sini
-  };
+    onLogin();
+    };
 
   return (
     <div className="login-wrapper">
